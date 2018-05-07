@@ -6,18 +6,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="imoocsecurityapp" />
-        <module name="imoocsecuritybroswer" />
-        <module name="imoocsecuritycore" />
-        <module name="imoocsecuritydemo" />
+        <module name="imooc-security-pr" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="imoocsecurity" target="1.8" />
-      <module name="imoocsecurityapp" target="1.8" />
-      <module name="imoocsecuritybroswer" target="1.8" />
-      <module name="imoocsecuritycore" target="1.8" />
-      <module name="imoocsecuritydemo" target="1.8" />
+      <module name="imooc-security-pr" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

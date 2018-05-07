@@ -3,11 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/imooc-security-pr.iml" filepath="$PROJECT_DIR$/imooc-security-pr.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../imooc-security-pr/imoocsecurity/imoocsecurity.iml" filepath="$PROJECT_DIR$/../imooc-security-pr/imoocsecurity/imoocsecurity.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../imooc-security-pr/imoocsecurityapp/imoocsecurityapp.iml" filepath="$PROJECT_DIR$/../imooc-security-pr/imoocsecurityapp/imoocsecurityapp.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../imooc-security-pr/imoocsecuritybroswer/imoocsecuritybroswer.iml" filepath="$PROJECT_DIR$/../imooc-security-pr/imoocsecuritybroswer/imoocsecuritybroswer.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../imooc-security-pr/imoocsecuritycore/imoocsecuritycore.iml" filepath="$PROJECT_DIR$/../imooc-security-pr/imoocsecuritycore/imoocsecuritycore.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../imooc-security-pr/imoocsecuritydemo/imoocsecuritydemo.iml" filepath="$PROJECT_DIR$/../imooc-security-pr/imoocsecuritydemo/imoocsecuritydemo.iml" />
     </modules>
   </component>
 </project>
