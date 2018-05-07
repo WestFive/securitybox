@@ -1,0 +1,15 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc://mysql://127.0.0.1:3306/securitytest
+    username: root
+    password: 520520
+  session:
+    store-type: none
+security:
+  basic:
+    enabled: false
+server:
+  port: 8060
+
+
