@@ -1,2 +1,11 @@
 server:
   port: 8591
+
+
+westf:
+  security:
+    broswer:
+      loginPage: signIn.html
+      loginType: REDIRECT
+      defaultPage: index.html
+
