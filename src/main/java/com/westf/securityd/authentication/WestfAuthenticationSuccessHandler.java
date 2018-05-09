@@ -35,8 +35,7 @@ public class WestfAuthenticationSuccessHandler extends SavedRequestAwareAuthenti
 
         if(LoginType.JSON.equals(broswerProperties.getLoginType())) {
             httpServletResponse.setContentType("application/json;charset=UTF-8");
-            httpServletResponse.getWriter().write(objectMapper.writeValueAsString(authentication.getDetails())); //转成JSON对象转回给响应
-
+            httpServletResponse.getWriter().write(objectMapper.writeValueAsString(authentication.getPrincipal())); //转成JSON对象转回给响应
         }else {
 
             super.onAuthenticationSuccess(httpServletRequest,httpServletResponse,authentication);

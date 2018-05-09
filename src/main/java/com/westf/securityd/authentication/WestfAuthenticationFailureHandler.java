@@ -38,7 +38,7 @@ public class WestfAuthenticationFailureHandler extends SimpleUrlAuthenticationFa
 
             httpServletResponse.setStatus(HttpStatus.INTERNAL_SERVER_ERROR.value());
             httpServletResponse.setContentType("application/json;charset=UTF-8");
-            httpServletResponse.getWriter().write(mapper.writeValueAsString(e));
+            httpServletResponse.getWriter().write(mapper.writeValueAsString(e.getMessage()));
         }else
         {
             super.onAuthenticationFailure(httpServletRequest,httpServletResponse,e);

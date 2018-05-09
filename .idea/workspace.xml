@@ -2,23 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="25cb8652-9de6-4973-b6ed-05a7a43a3dba" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/westf/securityd/util/VerifyCode.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/westf/securityd/validate/code/ImageCode.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/westf/securityd/validate/code/ValidateCodeController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/westf/securityd/validate/code/ValidateCodeException.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/westf/securityd/validate/code/ValidateCodeFilter.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/westf/securityd/propertites/SecurityProperties.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/imooc-security-pr.iml" afterPath="$PROJECT_DIR$/imooc-security-pr.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/westf/securityd/authentication/WestfAuthenticationFailureHandler.java" afterPath="$PROJECT_DIR$/src/main/java/com/westf/securityd/authentication/WestfAuthenticationFailureHandler.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/westf/securityd/authentication/WestfAuthenticationSuccessHandler.java" afterPath="$PROJECT_DIR$/src/main/java/com/westf/securityd/authentication/WestfAuthenticationSuccessHandler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/westf/securityd/config/SecurityConfigure.java" afterPath="$PROJECT_DIR$/src/main/java/com/westf/securityd/config/SecurityConfigure.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/westf/securityd/controller/BroswerSecurityController.java" afterPath="$PROJECT_DIR$/src/main/java/com/westf/securityd/controller/BroswerSecurityController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/westf/securityd/propertites/BroswerProperties.java" afterPath="$PROJECT_DIR$/src/main/java/com/westf/securityd/propertites/BroswerProperties.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/westf/securityd/propertites/SecurityCoreConfig.java" afterPath="$PROJECT_DIR$/src/main/java/com/westf/securityd/propertites/SecurityCoreConfig.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/application.yml" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/signIn.html" afterPath="$PROJECT_DIR$/src/main/resources/static/signIn.html" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -44,8 +29,8 @@
       <file leaf-file-name="WestfAuthenticationFailureHandler.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/westf/securityd/authentication/WestfAuthenticationFailureHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="231">
-              <caret line="36" column="50" lean-forward="false" selection-start-line="36" selection-start-column="50" selection-end-line="36" selection-end-column="50" />
+            <state relative-caret-position="317">
+              <caret line="40" column="91" lean-forward="false" selection-start-line="40" selection-start-column="91" selection-end-line="40" selection-end-column="91" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -119,7 +104,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="application.yml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="application.yml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/application.yml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="144">
@@ -129,11 +114,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="WestfAuthenticationSuccessHandler.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="WestfAuthenticationSuccessHandler.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/westf/securityd/authentication/WestfAuthenticationSuccessHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
-              <caret line="35" column="50" lean-forward="false" selection-start-line="35" selection-start-column="50" selection-end-line="35" selection-end-column="50" />
+            <state relative-caret-position="344">
+              <caret line="37" column="130" lean-forward="false" selection-start-line="37" selection-start-column="130" selection-end-line="37" selection-end-column="130" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -196,10 +181,10 @@
         <option value="$PROJECT_DIR$/src/main/java/com/westf/securityd/propertites/BroswerProperties.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/westf/securityd/controller/BroswerSecurityController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/westf/securityd/config/SecurityConfigure.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/westf/securityd/authentication/WestfAuthenticationFailureHandler.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/westf/securityd/authentication/WestfAuthenticationSuccessHandler.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/westf/securityd/propertites/SecurityCoreConfig.java" />
         <option value="$PROJECT_DIR$/src/main/resources/application.yml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/westf/securityd/authentication/WestfAuthenticationFailureHandler.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/westf/securityd/authentication/WestfAuthenticationSuccessHandler.java" />
       </list>
     </option>
   </component>
@@ -511,12 +496,12 @@
       <option name="presentableId" value="Default" />
       <updated>1525683424223</updated>
       <workItem from="1525683427399" duration="1180000" />
-      <workItem from="1525831717400" duration="13106000" />
+      <workItem from="1525831717400" duration="13240000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14286000" />
+    <option name="totallyTimeSpent" value="14420000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
@@ -840,26 +825,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/westf/securityd/authentication/WestfAuthenticationFailureHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="36" column="50" lean-forward="false" selection-start-line="36" selection-start-column="50" selection-end-line="36" selection-end-column="50" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/westf/securityd/authentication/WestfAuthenticationSuccessHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="35" column="50" lean-forward="false" selection-start-line="35" selection-start-column="50" selection-end-line="35" selection-end-column="50" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/westf/securityd/propertites/SecurityCoreConfig.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -885,6 +850,26 @@
         <state relative-caret-position="144">
           <caret line="8" column="21" lean-forward="false" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="21" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/westf/securityd/authentication/WestfAuthenticationFailureHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="317">
+          <caret line="40" column="91" lean-forward="false" selection-start-line="40" selection-start-column="91" selection-end-line="40" selection-end-column="91" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/westf/securityd/authentication/WestfAuthenticationSuccessHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="344">
+          <caret line="37" column="130" lean-forward="false" selection-start-line="37" selection-start-column="130" selection-end-line="37" selection-end-column="130" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
