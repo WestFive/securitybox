@@ -5,7 +5,7 @@ server:
 westf:
   security:
     broswer:
-      loginPage: signIn.html
-      loginType: REDIRECT
-      defaultPage: index.html
+      loginPage: /signIn.html
+      loginType: JSON
+      defaultPage: /index.html
 

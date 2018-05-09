@@ -1,10 +1,16 @@
 package com.westf.securityd.propertites;
 
+import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.context.annotation.Configuration;
+
+
+@ConfigurationProperties("westf.security.broswer")
+@Configuration
 public class BroswerProperties {
 
     private String loginPage = "/signIn.html";
 
-    private LoginType loginType;
+    private LoginType loginType = LoginType.JSON;
 
     private String defaultPage = "/index.html";
 

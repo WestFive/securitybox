@@ -1,11 +1,10 @@
 package com.westf.securityd.controller;
 
 import com.westf.securityd.bean.SimpleResponse;
-import com.westf.securityd.propertites.SecurityProperties;
+import com.westf.securityd.propertites.BroswerProperties;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.web.DefaultRedirectStrategy;
 import org.springframework.security.web.RedirectStrategy;
@@ -33,7 +32,7 @@ public class BroswerSecurityController {
 
 
     @Autowired
-    SecurityProperties securityProperties;
+    BroswerProperties broswerProperties;
 
 
     //当需要身份认证时跳转到此
@@ -48,8 +47,8 @@ public class BroswerSecurityController {
             logger.info("引发跳转的请求是"+targetUrl);
             if(StringUtils.endsWithIgnoreCase(targetUrl,".html"))
             {
-                redirectStrategy.sendRedirect(request,response,securityProperties.getBroswerProperties().getLoginPage());
-
+                redirectStrategy.sendRedirect(request,response,broswerProperties.getLoginPage());
+                logger.info("跳转完成");
             }
 
         }

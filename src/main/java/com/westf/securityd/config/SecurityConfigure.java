@@ -2,22 +2,24 @@ package com.westf.securityd.config;
 
 import com.westf.securityd.authentication.WestfAuthenticationFailureHandler;
 import com.westf.securityd.authentication.WestfAuthenticationSuccessHandler;
-import com.westf.securityd.propertites.SecurityProperties;
+import com.westf.securityd.propertites.BroswerProperties;
+import com.westf.securityd.validate.code.ValidateCodeFilter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.security.config.annotation.SecurityConfigurerAdapter;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 @Configuration
 public class  SecurityConfigure extends WebSecurityConfigurerAdapter {
 
+
+
     @Autowired
-    private SecurityProperties securityProperties;
+    private BroswerProperties broswerProperties;
 
     @Bean
     public PasswordEncoder passwordEncoder(){
@@ -33,16 +35,20 @@ public class  SecurityConfigure extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
+        ValidateCodeFilter filter = new ValidateCodeFilter();
+        filter.setAuthenticationFailureHandler(westfAuthenticationFailureHandler); //添加自定义filter
 
 
-        http.formLogin()
+
+        http.addFilterBefore(filter, UsernamePasswordAuthenticationFilter.class)
+                .formLogin()
                 .successHandler(westfAuthenticationSuccessHandler)
                 .failureHandler(westfAuthenticationFailureHandler)
                 .loginPage("/authentication/require") // loginPage or not html
                 .loginProcessingUrl("/authentication/form")
                 .and()
                 .authorizeRequests()
-                .antMatchers("/authentication/require",securityProperties.getBroswerProperties().getLoginPage()).permitAll()
+                .antMatchers("/authentication/require",broswerProperties.getLoginPage(),"/code/image").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .csrf().disable();

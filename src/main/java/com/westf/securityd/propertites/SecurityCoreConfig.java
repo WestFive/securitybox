@@ -6,7 +6,7 @@ import org.springframework.context.annotation.Configuration;
 
 /*开启配置读取*/
 @Configuration
-@EnableConfigurationProperties(SecurityProperties.class)
+@EnableConfigurationProperties(BroswerProperties.class)
 public class SecurityCoreConfig {
 
 }
