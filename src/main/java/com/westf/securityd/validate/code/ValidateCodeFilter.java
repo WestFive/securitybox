@@ -80,7 +80,8 @@ public class ValidateCodeFilter extends OncePerRequestFilter {
             sessionStrategy.removeAttribute(request,ValidateCodeController.SESSION_KEY);
             throw new ValidateCodeException("验证码已过期");
         }
-        if(!codeInSession.getCode().equals(codeInRequest)){
+        if(!codeInSession.getCode().equalsIgnoreCase(codeInRequest)){
+            logger.info(codeInSession.getCode()+"比较"+codeInRequest);
             throw new ValidateCodeException("验证码不匹配");
         }
         sessionStrategy.removeAttribute(request,ValidateCodeController.SESSION_KEY);

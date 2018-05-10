@@ -14,6 +14,16 @@ public class BroswerProperties {
 
     private String defaultPage = "/index.html";
 
+    private  int rememberMeSeconds = 3600;
+
+    public int getRememberMeSeconds() {
+        return rememberMeSeconds;
+    }
+
+    public void setRememberMeSeconds(int rememberMeSeconds) {
+        this.rememberMeSeconds = rememberMeSeconds;
+    }
+
     public String getDefaultPage() {
         return defaultPage;
     }

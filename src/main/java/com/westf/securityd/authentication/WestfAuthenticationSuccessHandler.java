@@ -18,15 +18,13 @@ import java.io.IOException;
 @Component
 public class WestfAuthenticationSuccessHandler extends SavedRequestAwareAuthenticationSuccessHandler{
 
-
     private Logger logger = LoggerFactory.getLogger(getClass());
 
     @Autowired
     private ObjectMapper objectMapper;
 
     @Autowired
-    BroswerProperties broswerProperties;
-
+    private BroswerProperties broswerProperties;
 
     @Override
     public void onAuthenticationSuccess(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Authentication authentication) throws IOException, ServletException {

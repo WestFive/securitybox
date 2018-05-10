@@ -35,6 +35,9 @@ public class BroswerSecurityController {
     BroswerProperties broswerProperties;
 
 
+
+
+
     //当需要身份认证时跳转到此
     @RequestMapping("/authentication/require")
     @ResponseStatus(code  = HttpStatus.UNAUTHORIZED)

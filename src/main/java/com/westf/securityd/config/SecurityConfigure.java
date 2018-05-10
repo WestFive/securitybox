@@ -9,9 +9,14 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+import org.springframework.security.web.authentication.rememberme.JdbcTokenRepositoryImpl;
+import org.springframework.security.web.authentication.rememberme.PersistentTokenRepository;
+
+import javax.sql.DataSource;
 
 @Configuration
 public class  SecurityConfigure extends WebSecurityConfigurerAdapter {
@@ -28,10 +33,31 @@ public class  SecurityConfigure extends WebSecurityConfigurerAdapter {
     }
 
     @Autowired
+    private UserDetailsService userDetailsService;
+
+
+    @Autowired
+    private DataSource dataSource;
+
+    @Autowired
+    PersistentTokenRepository persistentTokenRepository;
+
+    @Bean
+    public PersistentTokenRepository persistentTokenRepository() {
+        JdbcTokenRepositoryImpl tokenRepository = new JdbcTokenRepositoryImpl();
+        tokenRepository.setDataSource(dataSource);
+        //tokenRepository.setCreateTableOnStartup(true); //初始启动时取消注释 二次启动时注释此行
+        return tokenRepository;
+    }
+
+
+
+    @Autowired
     WestfAuthenticationSuccessHandler westfAuthenticationSuccessHandler;
 
     @Autowired
     WestfAuthenticationFailureHandler westfAuthenticationFailureHandler;
+
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
@@ -47,11 +73,15 @@ public class  SecurityConfigure extends WebSecurityConfigurerAdapter {
                 .loginPage("/authentication/require") // loginPage or not html
                 .loginProcessingUrl("/authentication/form")
                 .and()
-                .authorizeRequests()
-                .antMatchers("/authentication/require",broswerProperties.getLoginPage(),"/code/image").permitAll()
-                .anyRequest().authenticated()
+                    .rememberMe().tokenRepository(persistentTokenRepository)
+                    .tokenValiditySeconds(broswerProperties.getRememberMeSeconds())
+                    .userDetailsService(userDetailsService)
                 .and()
-                .csrf().disable();
+                    .authorizeRequests()
+                    .antMatchers("/authentication/require",broswerProperties.getLoginPage(),"/code/image","/temp").permitAll()
+                    .anyRequest().authenticated()
+                .and()
+                    .csrf().disable();
 
 
     }
