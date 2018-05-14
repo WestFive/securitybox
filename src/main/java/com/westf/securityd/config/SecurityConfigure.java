@@ -2,7 +2,9 @@ package com.westf.securityd.config;
 
 import com.westf.securityd.authentication.WestfAuthenticationFailureHandler;
 import com.westf.securityd.authentication.WestfAuthenticationSuccessHandler;
+import com.westf.securityd.mobile.SmsCodeAuthenticationSecurityConfig;
 import com.westf.securityd.propertites.BroswerProperties;
+import com.westf.securityd.validate.code.SmsCodeFilter;
 import com.westf.securityd.validate.code.ValidateCodeFilter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -51,6 +53,10 @@ public class  SecurityConfigure extends WebSecurityConfigurerAdapter {
     }
 
 
+    @Autowired
+    SmsCodeAuthenticationSecurityConfig smsCodeAuthenticationSecurityConfig;
+
+
 
     @Autowired
     WestfAuthenticationSuccessHandler westfAuthenticationSuccessHandler;
@@ -64,9 +70,12 @@ public class  SecurityConfigure extends WebSecurityConfigurerAdapter {
         ValidateCodeFilter filter = new ValidateCodeFilter();
         filter.setAuthenticationFailureHandler(westfAuthenticationFailureHandler); //添加自定义filter
 
+        SmsCodeFilter filter1 = new SmsCodeFilter();
+        filter1.setAuthenticationFailureHandler(westfAuthenticationFailureHandler);
 
 
-        http.addFilterBefore(filter, UsernamePasswordAuthenticationFilter.class)
+        http.addFilterBefore(filter1,UsernamePasswordAuthenticationFilter.class)
+                .addFilterBefore(filter, UsernamePasswordAuthenticationFilter.class)
                 .formLogin()
                 .successHandler(westfAuthenticationSuccessHandler)
                 .failureHandler(westfAuthenticationFailureHandler)
@@ -78,10 +87,11 @@ public class  SecurityConfigure extends WebSecurityConfigurerAdapter {
                     .userDetailsService(userDetailsService)
                 .and()
                     .authorizeRequests()
-                    .antMatchers("/authentication/require",broswerProperties.getLoginPage(),"/code/image","/temp").permitAll()
+                    .antMatchers("/authentication/require",broswerProperties.getLoginPage(),"/code/*","/temp").permitAll()
                     .anyRequest().authenticated()
                 .and()
-                    .csrf().disable();
+                    .csrf().disable()
+        .apply(smsCodeAuthenticationSecurityConfig);
 
 
     }
